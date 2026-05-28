@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>UpUp Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-column">
+        <div class="game-stage">
+          <section class="home-hud" id="homeHud">
+            <div class="home-coins">
+              <span class="home-coin-icon"></span>
+              <span id="homeCoinsValue">0</span>
+            </div>
+          </section>
+
+          <div class="top-strip">
+            <section class="score-panel in-game">
+              <div class="score-metrics">
+                <div class="metric-block metric-multiplier">
+                  <p class="score-value multiplier-value" id="multiplierValue">1</p>
+                  <p class="panel-label">Multiplier</p>
+                </div>
+                <p class="metric-separator">x</p>
+                <div class="metric-block metric-coins">
+                  <p class="score-value coin-value" id="scoreValue">0</p>
+                  <p class="panel-label">Coins</p>
+                </div>
+                <p class="metric-separator">=</p>
+                <div class="metric-block metric-sum">
+                  <p class="score-value sum-value" id="sumValue">0</p>
+                  <p class="panel-label">Sum</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <canvas
+            id="game"
+            width="414"
+            height="896"
+            aria-label="Pionowy prototyp gry UpUp"
+          ></canvas>
+
+          <button id="playButton" class="play-button" type="button">Play</button>
+
+          <section class="home-popup" id="homePopup" hidden>
+            <div class="home-popup-card">
+              <div class="home-popup-head">
+                <h2 id="homePopupTitle">Building</h2>
+                <button id="homePopupClose" class="home-popup-close" type="button">X</button>
+              </div>
+              <p class="home-popup-subtitle" id="homePopupSubtitle">Upgrades</p>
+              <div class="home-popup-list" id="homePopupList"></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="stats-panel">
+          <p><span class="stat-label">Tunel</span><span id="depthValue">spadanie 200 m</span></p>
+          <p><span class="stat-label">Predkosc</span><span id="speedValue">0.0 m/s</span></p>
+          <p><span class="stat-label">Do dna</span><span id="remainingValue">200.0 m</span></p>
+          <p><span class="stat-label">Czas</span><span id="timeValue">0.0 s</span></p>
+          <p><span class="stat-label">Stan</span><span id="stateValue">Gotowy do puszczenia</span></p>
+          <p class="status-note" id="statusNote">Cel: spadaj jak najdluzej i zbieraj monety</p>
+        </section>
+
+        <button id="resetButton" type="button">Reset rundy</button>
+      </aside>
+    </main>
+
+    <script src="./node_modules/planck/dist/planck.min.js"></script>
+    <script src="./game.js?v=splash-intro-1"></script>
+  </body>
+</html>
